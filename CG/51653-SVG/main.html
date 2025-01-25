@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ram Ram - 2D Arena</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #000033;
+      overflow: hidden;
+    }
+    #score {
+      font-size: 24px;
+      margin-bottom: 10px;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+    svg {
+      border: 2px solid #4d4dff;
+      background-color: #000033;
+    }
+  </style>
+</head>
+<body>
+  <div id="score">Score: 0</div>
+  <svg id="arena" width="800" height="400">
+    <defs>
+      <radialGradient id="starGradient">
+        <stop offset="0%" stop-color="white" />
+        <stop offset="100%" stop-color="transparent" />
+      </radialGradient>
+    </defs>
+    <!-- Foguete com ponta -->
+    <g id="rocket" transform="translate(40, 200)">
+      <!-- Ponta do foguete -->
+      <polygon points="0,10 20,0 20,20" fill="orange"></polygon>
+      <!-- Corpo do foguete -->
+      <rect x="20" y="0" width="60" height="20" fill="red"></rect>
+      <!-- Asas -->
+      <polygon points="20,0 10,-10 40,0" fill="blue"></polygon>
+      <polygon points="20,20 10,30 40,20" fill="blue"></polygon>
+      <!-- Janelas -->
+      <circle cx="40" cy="10" r="5" fill="white"></circle>
+      <circle cx="60" cy="10" r="5" fill="white"></circle>
+    </g>
+  </svg>
+
+  <script>
+    const svgNS = "http://www.w3.org/2000/svg";
+    const arena = document.getElementById("arena");
+    const rocket = document.getElementById("rocket");
+    const scoreDisplay = document.getElementById("score");
+
+    const arenaWidth = parseInt(arena.getAttribute("width"));
+    const arenaHeight = parseInt(arena.getAttribute("height"));
+    const rocketWidth = 80;
+    const rocketHeight = 20;
+    const doorWidth = 20;
+
+    let rocketY = 200;
+    let doors = [];
+    let gameRunning = true;
+    let score = 0;
+
+    const rocketSpeed = 70;
+    const minVel = 5; 
+    const minHeight = 60; 
+    const doorSpacing = 100; 
+
+    function addStars() {
+      for (let i = 0; i < 50; i++) {
+        const star = document.createElementNS(svgNS, "circle");
+        star.setAttribute("cx", Math.random() * arenaWidth);
+        star.setAttribute("cy", Math.random() * arenaHeight);
+        star.setAttribute("r", Math.random() * 2 + 1);
+        star.setAttribute("fill", "url(#starGradient)");
+        arena.insertBefore(star, arena.firstChild);
+      }
+    }
+
+    document.addEventListener("keydown", (event) => {
+      if (!gameRunning) return;
+
+      if (event.key === "w" && rocketY > 0) {
+        rocketY -= rocketSpeed;
+      } else if (event.key === "s" && rocketY < arenaHeight - rocketHeight) {
+        rocketY += rocketSpeed;
+      }
+      rocket.setAttribute("transform", `translate(40, ${rocketY})`);
+    });
+
+    function addDoor() {
+      const doorHeight = Math.max(Math.random() * (arenaHeight / 2) + minHeight, minHeight);
+
+      let doorY;
+      if (doors.length === 0) {
+        doorY = Math.random() < 0.8 ? 0 : arenaHeight - doorHeight;
+      } else {
+        doorY = doors[0].element.getAttribute("y") === "0" ? 0 : arenaHeight - doorHeight;
+      }
+
+      const lastDoorX = doors.length > 0 ? parseFloat(doors[doors.length - 1].element.getAttribute("x")) : arenaWidth;
+
+      if (lastDoorX < arenaWidth - doorSpacing) {
+        return; 
+      }
+
+      const door = document.createElementNS(svgNS, "rect");
+      door.setAttribute("x", arenaWidth);
+      door.setAttribute("y", doorY);
+      door.setAttribute("width", doorWidth);
+      door.setAttribute("height", doorHeight);
+      door.setAttribute("fill", "#4d4dff");
+      arena.appendChild(door);
+      doors.push({ element: door, speed: minVel }); 
+    }
+
+    function updateDoors() {
+      doors.forEach((door, index) => {
+        const currentX = parseFloat(door.element.getAttribute("x"));
+        const doorY = parseFloat(door.element.getAttribute("y"));
+        const doorHeight = parseFloat(door.element.getAttribute("height"));
+
+        if (currentX + doorWidth < 0) {
+          arena.removeChild(door.element);
+          doors.splice(index, 1);
+          gameRunning = false;
+          scoreDisplay.textContent = `Game Over! Final Score: ${Math.floor(score)}`;
+          return;
+        }
+
+        if (
+          currentX <= 120 &&
+          currentX + doorWidth >= 40 &&
+          doorY <= rocketY + rocketHeight &&
+          doorY + doorHeight >= rocketY
+        ) {
+          arena.removeChild(door.element);
+          doors.splice(index, 1);
+          return;
+        }
+
+        door.element.setAttribute("x", currentX - door.speed); 
+      });
+    }
+
+    function updateScore() {
+      score += 0.016; 
+      scoreDisplay.textContent = `Score: ${Math.floor(score)}`;
+    }
+
+    function gameLoop() {
+      if (!gameRunning) return;
+
+      updateDoors();
+      updateScore();
+
+      if (Math.random() < 0.02) {
+        addDoor();
+      }
+
+      requestAnimationFrame(gameLoop);
+    }
+
+    addStars();
+    gameLoop();
+  </script>
+</body>
+</html>

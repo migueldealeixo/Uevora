@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animação 2D - Carros e Semáforo</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const skyColor = '#87CEEB';
+
+        const semaforo = {
+            x: 200,
+            y: canvas.height - 280, 
+            width: 120, 
+            height: 200, // 
+            state: 'red',
+            timer: 0
+        };
+
+        const carros = [
+            {
+                x: 100,
+                y: canvas.height - 60,
+                width: 60,
+                height: 30,
+                color: '#FF5733',
+                speed: 1
+            },
+            {
+                x: -350,
+                y: canvas.height - 60,
+                width: 60,
+                height: 30,
+                color: '#33FF57',
+                speed: 1.5
+            }
+        ];
+
+        // Prédios
+        const predios = [];
+        for (let i = 0; i < 15; i++) {
+            predios.push({
+                x: i * 100,
+                y: canvas.height - 80 - (200 + Math.random() * 200), 
+                width: 80,
+                height: 200 + Math.random() * 200,
+                color: `rgb(${Math.random()*50+100}, ${Math.random()*50+100}, ${Math.random()*50+100})`
+            });
+        }
+
+        // Nuvens
+        const nuvens = [];
+
+        function inicializarNuvens() {
+            for (let i = 0; i < 10; i++) {
+                nuvens.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * (canvas.height / 3),
+                    size: Math.random() * 50 + 25,
+                    speed: Math.random() * 0.5 + 0.1
+                });
+            }
+        }
+
+        function desenharPasseio() {
+            ctx.fillStyle = '#A9A9A9';
+            ctx.fillRect(0, canvas.height - 80, canvas.width, 40);
+        }
+
+        function desenharFundo() {
+            // Céu
+            ctx.fillStyle = skyColor;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            desenharNuvens();
+
+            predios.forEach(predio => {
+                ctx.fillStyle = predio.color;
+                ctx.fillRect(predio.x, predio.y, predio.width, predio.height);
+                
+                desenharJanelas(predio);
+            });
+
+            desenharPasseio();
+
+            ctx.fillStyle = '#555555';
+            ctx.fillRect(0, canvas.height - 40, canvas.width, 40);
+
+            ctx.beginPath();
+            ctx.strokeStyle = 'white';
+            ctx.setLineDash([20, 20]);
+            ctx.moveTo(0, canvas.height - 20);
+            ctx.lineTo(canvas.width, canvas.height - 20);
+            ctx.stroke();
+            ctx.setLineDash([]);
+        }
+
+        function desenharNuvens() {
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+            
+            nuvens.forEach(nuvem => {
+                ctx.beginPath();
+                ctx.arc(nuvem.x, nuvem.y, nuvem.size, 0, Math.PI * 2);
+                ctx.arc(nuvem.x + nuvem.size * 0.5, nuvem.y - nuvem.size * 0.5, nuvem.size * 0.6, 0, Math.PI * 2);
+                ctx.arc(nuvem.x + nuvem.size, nuvem.y, nuvem.size * 0.8, 0, Math.PI * 2);
+                ctx.fill();
+
+                nuvem.x += nuvem.speed;
+                
+                if (nuvem.x > canvas.width + nuvem.size) {
+                    nuvem.x = -nuvem.size;
+                }
+            });
+        }
+
+        function desenharJanelas(predio) {
+            ctx.fillStyle = 'rgba(255, 255, 200, 0.5)';
+            for (let i = 0; i < 5; i++) {
+                for (let j = 0; j < 3; j++) {
+                    ctx.fillRect(predio.x + 10 + j * 25, predio.y + 20 + i * 40, 15, 20);
+                }
+            }
+        }
+
+        function desenharSemaforo() {
+            // Poste vertical
+            ctx.fillStyle = '#2c3e50';
+            ctx.fillRect(semaforo.x + semaforo.width / 2 - 5, semaforo.y, 10, semaforo.height);
+
+            ctx.fillRect(semaforo.x, semaforo.y, semaforo.width, 40);
+
+            // Luzes
+            const lightRadius = 15;
+            const centerY = semaforo.y + 20;
+
+            // Vermelho
+            ctx.beginPath();
+            ctx.fillStyle = semaforo.state === 'red' ? 'red' : '#4d0000';
+            ctx.arc(semaforo.x + 20, centerY, lightRadius, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Amarelo
+            ctx.beginPath();
+            ctx.fillStyle = semaforo.state === 'yellow' ? 'yellow' : '#4d4d00';
+            ctx.arc(semaforo.x + semaforo.width / 2, centerY, lightRadius, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Verde
+            ctx.beginPath();
+            ctx.fillStyle = semaforo.state === 'green' ? 'green' : '#004d00';
+            ctx.arc(semaforo.x + semaforo.width - 20, centerY, lightRadius, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        function desenharCarro(carro) {
+            ctx.fillStyle = carro.color;
+            ctx.fillRect(carro.x, carro.y, carro.width, carro.height);
+
+            // Janelas
+            ctx.fillStyle = '#d5dbdb';
+            ctx.fillRect(carro.x + 10, carro.y - 10, 20, 10);
+            ctx.fillRect(carro.x + 35, carro.y - 10, 20, 10);
+
+            // Rodas
+            ctx.fillStyle = '#2c3e50';
+            ctx.beginPath();
+            ctx.arc(carro.x + 15, carro.y + carro.height, 8, 0, Math.PI * 2);
+            ctx.arc(carro.x + carro.width - 15, carro.y + carro.height, 8, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        function atualizarSemaforo() {
+            semaforo.timer++;
+
+            if (semaforo.timer > 300) {
+                switch (semaforo.state) {
+                    case 'red':
+                        semaforo.state = 'green';
+                        break;
+                    case 'green':
+                        semaforo.state = 'yellow';
+                        break;
+                    case 'yellow':
+                        semaforo.state = 'red';
+                        break;
+                }
+                semaforo.timer = 0;
+            }
+        }
+
+        function atualizarCarros() {
+            carros.forEach(carro => {
+                if (
+                    carro.x + carro.width > semaforo.x - 50 &&
+                    carro.x < semaforo.x + semaforo.width + 50 &&
+                    semaforo.state === 'red'
+                ) {
+                    carro.speed = 0;
+                } else {
+                    carro.speed = carro.speed || 2;
+                }
+
+                carro.x += carro.speed;
+
+                if (carro.x > canvas.width) {
+                    carro.x = -carro.width;
+                }
+            });
+        }
+
+        function atualizar() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            desenharFundo();
+            desenharSemaforo();
+            carros.forEach(desenharCarro);
+
+            atualizarSemaforo();
+            atualizarCarros();
+
+            requestAnimationFrame(atualizar);
+        }
+
+        function init() {
+            inicializarNuvens();
+            atualizar();
+        }
+
+        init();
+    </script>
+</body>
+</html>
