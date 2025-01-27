@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  
+  .banner {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+      url(../images/viagem.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+  }
+  .navbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .logo {
+    margin-left: 10px;
+    width: 100px;
+    cursor: pointer;
+  }
+  
+  .logo img {
+    max-width: 10%;
+    height: auto;
+  }
+  
+  .navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+  }
+  .navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  .navbar ul li::after {
+    content: "";
+    height: 3px;
+    width: 0%;
+    background: #8bc0c9;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+  }
+  .navbar ul li:hover::after {
+    width: 100%;
+  }
+  .banner-content {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+  }
+  .banner-content h1 {
+    font-size: 70px;
+    margin-top: 80px;
+  }
+  .banner-content p {
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+  }
+/*Viagens disponiveis*/
+.viagensdisponíveis {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    margin: 0 auto; 
+    padding: 30px; 
+    border-radius: 15px; 
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    max-width: 400px; 
+    width: 100%; /
+}
+
+.viagensdisponíveis h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+}
+
+.viagensdisponíveis p {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin: 10px 0;
+    text-align: center;
+}
+  /*footer*/
+
+.pg-footer {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.footer {
+    background-color: #5e9fa8; 
+    color: #fff; 
+    position: relative; 
+}
+
+.footer-wave-svg {
+    display: block;
+    height: 30px;
+    position: relative;
+    top: -1px; 
+    width: 100%;
+    background-color: #5e9fa8; 
+}
+
+.footer-wave-path {
+    fill: #46747a;
+}
+
+.footer-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1230px;
+    padding: 40px 15px; 
+    text-align: center; 
+}
+
+.footer-content .contact {
+    margin-bottom: 15px;
+}
+
+.footer-content .contact a {
+    color: #ffffff; 
+    text-decoration: none; 
+}
+
+.footer-content .contact a:hover {
+    color: #46747a; 
+    text-decoration: underline; 
+}
+
+.footer-content .credits {
+    margin-bottom: 10px;
+}
+
+.footer-content .link a {
+    color: #fffff2;
+    text-decoration: underline;
+}
+
+.footer-content a:hover {
+    color: #cddddf; 
+}

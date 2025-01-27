@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <a href="/admin"><img src="/images/logo.png" class="logo" alt="Logo"></a>
+            <ul>
+                <li><a href="newuser.html">Início</a></li>
+                <li><a href="#footer">Contatos</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="content">
+                <div class="validar">
+                    <h1>Validar Conta</h1>
+                    <h2>Deseja validar uma conta de utilizador?</h2>
+                    <form action="/aprovar" method="post">
+                        <label for="username">Username:</label>
+                        <input type="text" name="username" id="username" placeholder="Username" required>
+                        <button type="submit">Validar</button>
+                    </form>
+                    <div>
+                        <!-- Exibe mensagem de sucesso -->
+                        <div th:if="${success}" class="success-message">
+                            <p th:text="${success}"></p>
+                        </div>
+                    
+                        <!-- Exibe mensagem de erro -->
+                        <div th:if="${error}" class="error-message">
+                            <p th:text="${error}"></p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>   
+            <div class="desativar">
+                <h1>Desativar Conta</h1>
+                <h2>Deseja desativar uma conta de utilizador?</h2>
+                <form action="/desaprovar" method="post">
+                    <label for="Username">Username:</label>
+                    <input type="text" placeholder="Username" id="Username" name="username" required>
+                    <button id="desativar" type="submit">Desativar</button>
+                </form>
+                <div>
+                    <!-- Exibe mensagem de sucesso -->
+                    <div th:if="${success}" class="success-message">
+                        <p th:text="${success}"></p>
+                    </div>
+                
+                    <!-- Exibe mensagem de erro -->
+                    <div th:if="${error}" class="error-message">
+                        <p th:text="${error}"></p>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="gestao-utilizadores">
+                <h1>Gestão de Utilizadores</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Rating</th>
+                            <th>Role</th>
+                            <th>Ativo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Itera sobre a lista de utilizadores -->
+                        <tr th:each="user : ${users}">
+                            <td th:text="${user.username}"></td>
+                            <td th:text="${user.email}"></td>
+                            <td th:text="${user.rating}"></td>
+                            <td th:text="${user.role}"></td>
+                            <td th:text="${user.active ? 'Sim' : 'Não'}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="pg-footer" id="footer">
+        <footer class="footer">
+            <svg class="footer-wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100"
+                preserveAspectRatio="none">
+                <path class="footer-wave-path"
+                    d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z">
+                </path>
+            </svg>
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p class="contact"><span>Contatos:</span>
+                        <a href="mailto:l5@alunos.uevora.pt">l51653@alunos.uevora.pt</a>
+                        <a href="mailto:l51820@alunos.uevora.pt">l51820@alunos.uevora.pt</a>
+                    </p>
+                </div>
+                <div class="credits">
+                    <p>Desenvolvido por: Miguel Aleixo e Mariana Cavaco</p>
+                </div>
+                <div class="link">
+                    <a href="https://www.uevora.pt/">Universidade de Évora</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

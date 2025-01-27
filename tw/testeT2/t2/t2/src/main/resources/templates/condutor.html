@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Area do Condutor</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/css/condutor.css"
+    />
+  </head>
+
+  <body>
+    <html>
+      <body>
+        <!-- Banner -->
+        <div class="banner">
+          <div class="navbar">
+            <a href="condutor.html"
+              ><img src="/images/logo.png" class="logo" alt="Logo"
+            /></a>
+            <ul>
+              <li><a href="index.html">Início</a></li>
+              <li><a href="#footer">Contatos</a></li>
+            </ul>
+          </div>
+          <div class="banner-content">
+            <h1>Area do Condutor</h1>
+            <p>A tua escolha de viagens a preços baixos</p>
+          </div>
+        </div>
+    <div class="form-container">
+      <div class="form">
+    <form action="/condutor" id="sendRota" method="POST">
+        <h1>Registar Nova Rota</h1>
+        <label for="origem"></label>
+        <input type="text" id="origem" name="origem" placeholder="Digite a origem" required>
+
+        <label for="destino"></label>
+        <input type="text" id="destino" name="destino" placeholder="Digite o destino" required>
+
+        <label for="lugaresDisponiveis"></label>
+        <input type="number" id="lugaresDisponiveis" name="lugaresDisponiveis" min="1" placeholder="Número de lugares" required>
+
+        <label for="data"></label>
+        <input type="text" id="dataPedido" name="dataPedido" placeholder="Data" required>
+
+        <button type="submit" value="send">Enviar Rota</button>
+        <p th:if="${error1}" th:text="${error1}" class="feedback error" ></p>
+        <p th:if ="${error2}"  th:text="${error2}" class="feedback error"></p>
+        <p th:if="${success}" th:text="${sucess}" class="feedback success"></p>
+
+        
+    </form>
+  </div>
+    <div class="listaviagens-image">
+        <img src="/images/travel-illustration.jpg" alt="Viagem" />
+    </div>
+</div>
+
+
+<!--Lista de pedidos de viagens por passageiros-->
+<div class="listaviagenspedidas">
+  <div class="listaviagenspedidas-image">
+      <img src="/images/travel-illustration.jpg" alt="Viagem" />
+  </div>
+  <div class="listaviagenspedidas-content">
+      <h2>Veja as viagens pedidas até ao momento</h2>
+      <form action="/condutor" method="get">
+          <div class="buttons">
+              <button type="button" class="btn primary" id="showPedidosButton">
+                  Ver Viagens Pedidas
+              </button>
+          </div>
+      </form>
+      
+      <div id="pedidosLista" class="pedidos-lista" style="display:none;">
+          <table>
+              <thead>
+                  <tr>
+                      <th>Origem</th>
+                      <th>Destino</th>
+                      <th>Data do Pedido</th>
+                      <th>Feito por</th>
+                      <th>Ação</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <div th:if="${pedidos != null}">
+                      <div th:each="pedido : ${pedidos}">
+                          <tr>
+                              <td th:text="${pedido.origemPedido}"></td>
+                              <td th:text="${pedido.destinoPedido}"></td>
+                              <td th:text="${pedido.dataPedido}"></td>
+                              <td th:text="${pedido.utilizador.username}"></td>
+                              <td>
+                                <form action="/aceitarViagem" method="post">
+                                  <input type="hidden" name="pedidoID" th:value="${pedido.pedidoID}" />
+                                  <button type="submit" class="btn primary">Aceitar Viagem</button>
+                              </form>
+                              </td>
+                          </tr>
+                      </div>
+                  </div>
+                  <div th:if="${pedidos == null}">
+                      <tr>
+                          <td colspan="5">Não existem viagens pedidas no momento.</td>
+                      </tr>
+                  </div>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+
+<div class="eliminarregisto">
+  <div class="eliminarregistocontainer">
+    <h2>Deseja eliminar um registo?</h2>
+    <form id="removerForm" action="/remover" method="post">
+      <label for="origem"></label>
+      <input type="text" id="origem" name="origem" placeholder="Origem" required>
+      <label for="destino"></label>
+      <input type="text" id="destino" name="destino" placeholder="Destino" required>
+      <label for="data"></label>
+      <input type="text" id="data" name="data" placeholder="Data" required>
+      <button type="submit">Remover</button>
+    </form>
+
+    <!-- Display success or error messages -->
+    <div id="responseMessage" style="display: none; margin-top: 10px;">
+      <p th:if="${successMessage}" style="color: green;" th:text="${successMessage}"></p>
+      <p th:if="${errorMessage}" style="color: red;" th:text="${errorMessage}"></p>
+    </div>
+  </div>
+</div>
+
+
+  <!--Ver o perfil de um passageiro-->
+  <div class="avaliacãopassageiro">
+    <div class="avaliacãopassageirocontainer">
+      <h2>Deseja visualizar o perfil de um passageiro?</h2>
+      <form action="/procurarPassageiro" method="POST">
+        <label for="UsernamePassageiro"></label>
+        <input type="text" placeholder="Username do Passageiro" id="UsernamePassageiro" name="username" required>
+        <button type="submit">Procurar</button>
+        <p th:if="${error}" th:text="${error}" class="error-message"></p>
+        <div th:if="${username}">
+          <h2>Detalhes do Passageiro</h2>
+          <p>Username: <span th:text="${username}"></span></p>
+          <p>Rating: <span th:text="${rating}"></span></p>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+ <!-- Footer -->
+ <div class="pg-footer" id="footer">
+    <footer class="footer">
+      <svg
+        class="footer-wave-svg"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1200 100"
+        preserveAspectRatio="none"
+      >
+        <path
+          class="footer-wave-path"
+          d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"
+        ></path>
+      </svg>
+      <div class="footer-content">
+        <div class="footer-info">
+          <p class="contact">
+            <span>Contatos:</span>
+            <a href="mailto:l51653@alunos.uevora.pt"
+              >l51653@alunos.uevora.pt</a
+            >
+            <a href="mailto:l51820@alunos.uevora.pt"
+              >l51820@alunos.uevora.pt</a
+            >
+          </p>
+        </div>
+        <div class="credits">
+          <p>Desenvolvido por: Miguel Aleixo e Mariana Cavaco</p>
+        </div>
+        <div class="link">
+          <a href="https://www.uevora.pt/">Universidade de Évora</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
+</body>
+<script>
+  document.getElementById("showPedidosButton").addEventListener("click", function() {
+      var pedidosLista = document.getElementById("pedidosLista");
+      if (pedidosLista.style.display === "none") {
+          pedidosLista.style.display = "block";
+      } else {
+          pedidosLista.style.display = "none";
+      }
+  });
+</script>
+</html>

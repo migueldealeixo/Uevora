@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Area do Passageiro</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/css/passageiro.css"
+    />
+  </head>
+  <body>
+    <html>
+      <body>
+        <!-- Banner -->
+        <div class="banner">
+          <div class="navbar">
+            <a href="passageiro.html"
+              ><img src="/images/logo.png" class="logo" alt="Logo"
+            /></a>
+            <ul>
+              <li><a href="/index">Início</a></li>
+              <li><a href="#footer">Contatos</a></li>
+            </ul>
+          </div>
+          <div class="banner-content">
+            <h1>Area do Passageiro</h1>
+            <p>A tua escolha de viagens a preços baixos</p>
+          </div>
+        </div>
+
+        <!-- Registo de viagens -->
+        <div class="form-container">
+          <div class="form">
+            <h1>Vá onde quiser com o Carpooling Évora </h1>
+            <label for="origem"></label>
+            <input
+              type="text"
+              id="origem"
+              name="origem"
+              placeholder="Digite a origem"
+              required
+            />
+
+            <label for="destino"></label>
+            <input
+              type="text"
+              id="destino"
+              name="destino"
+              placeholder="Digite o destino"
+              required
+            />
+
+            <label for="data"></label>
+            <input
+              type="text"
+              id="data"
+              name="data"
+              placeholder="Data"
+              required
+            />
+
+            <button type="button" id="submitPedido">Enviar Pedido</button>
+          </div>
+          <div class="listaviagens-image">
+            <img src="/images/travel-illustration.jpg" alt="Viagem" />
+          </div>
+          <div id="message" style="display:none;"></div> 
+        </div>
+
+
+
+        <!--Lista de pedidos de viagens por passageiros-->
+<div class="listaviagensprogramadas">
+  <div class="listaviagenspedidas-image">
+      <img src="/images/travel-illustration.jpg" alt="Viagem" />
+  </div>
+  <div class="listaviagensprogramadas-content">
+      <h2>Veja as viagens a decorrer</h2>
+      <form action="/condutor" method="get">
+          <div class="buttons">
+              <button type="button" class="btn primary" id="showPedidosButton">
+                  Ver Viagens Pedidas
+              </button>
+          </div>
+      </form>
+      <div id="pedidosLista" class="pedidos-lista" style="display:none;">
+        <table id="rotasTable">
+          <thead>
+              <tr>
+                  <th>Origem</th>
+                  <th>Destino</th>
+                  <th>Data</th>
+                  <th>Condutor</th>
+                  <th>Ações</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr th:each="viagem : ${viagens}">
+                  <td th:text="${viagem.origem}"></td>
+                  <td th:text="${viagem.destino}"></td>
+                  <td th:text="${viagem.dataViagem}"></td>
+                  <td th:text="${viagem.condutorUsername}"></td>
+                  <td>
+                      <div th:if="${viagensDoUtilizador.contains(viagem.viagemID)}">
+                          <form action="/leave" method="post">
+                              <input type="hidden" name="viagemID" th:value="${viagem.viagemID}">
+                              <button type="submit" class="btn danger">Abandonar Viagem</button>
+                          </form>
+                      </div>
+                      <div th:if="${!viagensDoUtilizador.contains(viagem.viagemID)}">
+                          <form action="/join" method="post">
+                              <input type="hidden" name="viagemID" th:value="${viagem.viagemID}">
+                              <button type="submit" class="btn primary">Juntar-se à Viagem</button>
+                          </form>
+                      </div>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+      
+      </div>
+  </div>
+</div>
+
+
+
+      <!-- Eliminar um registo -->
+<div class="eliminarregisto">
+  <div class="eliminarregistocontainer">
+    <h2>Deseja eliminar um registo?</h2>
+    <form action="/removerPedido" method="post" id="removerPedidoForm">
+      <label for="Origem"></label>
+      <input type="text" name="origem" placeholder="Origem" id="Origem" required>
+
+      <label for="Destino"></label>
+      <input type="text" name="destino" placeholder="Destino" id="Destino" required>
+
+      <label for="Data"></label>
+      <input type="text" name="data" placeholder="Data" id="Data" required>
+
+      <button type="submit" id="remove">Remover</button>
+    </form>
+  </div>
+</div>
+
+        <!--Ver o perfil de um condutor-->
+      <div class="avaliacãocondutor">
+        <div class="avaliacãocondutorcontainer">
+          <h2>Deseja visualizar o perfil de um condutor?</h2>
+          <form action="/procurarCondutor" method="post">
+          <label for="Perfil do Condutor"></label>
+          <input type="text" placeholder="Username do Condutor" id="UsernameCondutor" name="username">
+          <button id="btnAvaliacãoCondutor">Procurar</button>
+            <p th:if="${error}" th:text="${error}" class="error-message"></p>
+            <div th:if="${username}">
+              <h2>Detalhes do Condutor: </h2>
+                <p>Username: <span th:text="${username}"></span></p>
+                <p>Rating: <span th:text="${rating}"></span></p>
+            </div>
+        </form>
+      </div>
+    </div>
+        <!-- Footer -->
+        <div class="pg-footer" id="footer">
+          <footer class="footer">
+            <svg
+              class="footer-wave-svg"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1200 100"
+              preserveAspectRatio="none"
+            >
+              <path
+                class="footer-wave-path"
+                d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"
+              ></path>
+            </svg>
+            <div class="footer-content">
+              <div class="footer-info">
+                <p class="contact">
+                  <span>Contatos:</span>
+                  <a href="mailto:l51653@alunos.uevora.pt"
+                    >l51653@alunos.uevora.pt</a
+                  >
+                  <a href="mailto:l51820@alunos.uevora.pt"
+                    >l51820@alunos.uevora.pt</a
+                  >
+                </p>
+              </div>
+              <div class="credits">
+                <p>Desenvolvido por: Miguel Aleixo e Mariana Cavaco</p>
+              </div>
+              <div class="link">
+                <a href="https://www.uevora.pt/">Universidade de Évora</a>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </body>
+    </html>
+  </body>
+  <script src="/js/passageiro.js"></script>
+  
+</html>

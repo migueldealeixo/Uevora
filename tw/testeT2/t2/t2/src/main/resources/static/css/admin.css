@@ -1,0 +1,208 @@
+/* Configuração geral */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Banner */
+/* Banner */
+.banner {
+  width: 100%;
+  min-height: 60vh; /* Ajustar a altura mínima para que não domine toda a página */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/viagem.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  width: 150px; 
+  height: auto; 
+  position: absolute; 
+  top: 20px; 
+  left: 20px; 
+  z-index: 10; 
+}
+
+
+
+
+
+.logo img {
+  max-width: 100px;
+  height: auto;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  margin-right: 20px;
+}
+
+.navbar ul li {
+  margin: 0 15px;
+  position: relative;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 5px;
+}
+
+.navbar ul li::after {
+  content: '';
+  height: 3px;
+  width: 0%;
+  background: #8bc0c9;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
+}
+
+.navbar ul li:hover::after {
+  width: 100%;
+}
+
+/* Conteúdo principal */
+main {
+  flex: 1;
+  padding: 80px 20px; /* Ajustar para evitar sobreposição com a navbar */
+  margin-top: 60px;   /* Garantir espaço abaixo do header */
+}
+
+/* Seção de formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 40px 0;
+}
+
+form label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+form input,
+form button {
+  height: 50px;
+  width: 300px;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+form input {
+  border: 1px solid #e2e2e2;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+form input:focus {
+  border-color: #000;
+  background-color: #fff;
+  outline: none;
+}
+
+form button {
+  background-color: #8bc0c9;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+form button:hover {
+  background-color: #46747a;
+}
+
+/* Tabelas */
+.table-container {
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+  background-color: #8bc0c9;
+  color: #fff;
+}
+
+thead th,
+tbody td {
+  padding: 15px 20px;
+  text-align: left;
+  color: #333;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Rodapé */
+.footer {
+  background-color: #5e9fa8;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: auto;
+}
+
+.footer a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer a:hover {
+  color: #46747a;
+}

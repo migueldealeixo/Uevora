@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>conversor</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Câmbio</h1>
+        <form action="https://www.bportugal.pt/conversor-moeda", method="POST">
+            <p>
+                Moeda de origem:
+                <input type="text" name="from" size="10">
+                Moeda final:
+                <input type="text" name="to" size="10">
+            </p>            
+            <p>
+                Valor a converter: <span id="conv_zone"></span>
+                <input type="text" name="value" id="conv_value" value="1">
+            </p>
+
+            <input type="submit" value="converter">
+        </form>
+    </body>
+</html>

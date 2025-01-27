@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perdil do Condutor</title>
+    <link rel="stylesheet" href="/css/perfilcondutor.css">
+</head>
+
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <a href="perfilcondutor.html"><img src="/images/logo.png" class="logo" alt="Logo"></a>
+            <ul>
+                <li><a href="/index">Início</a></li>
+                <li><a href="/passageiro">Área do Passageiro</a></li>
+                <li><a href="#footer">Contatos</a></li>
+            </ul>
+        </div>
+
+<div class="perfilcondutor">
+    <div th:if="${username}">
+        <h2>Detalhes do Condutor</h2>
+          <p>Username : <span th:text="${username}"></span></p>
+          <p>Rating : <span th:text="${rating}"></span></p>
+            
+
+
+
+
+
+      </div>
+</div>
+</div>
+
+<div class="pg-footer" id="footer">
+    <footer class="footer">
+        <svg class="footer-wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100"
+            preserveAspectRatio="none">
+            <path class="footer-wave-path"
+                d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z">
+            </path>
+        </svg>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p class="contact"><span>Contatos:</span>
+                    <a href="mailto:l5@alunos.uevora.pt">l51653@alunos.uevora.pt</a>
+                    <a href="mailto:l51820@alunos.uevora.pt">l51820@alunos.uevora.pt</a>
+                </p>
+            </div>
+            <div class="credits">
+                <p>Desenvolvido por: Miguel Aleixo e Mariana Cavaco</p>
+            </div>
+            <div class="link">
+                <a href="https://www.uevora.pt/">Universidade de Évora</a>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+
+</html>

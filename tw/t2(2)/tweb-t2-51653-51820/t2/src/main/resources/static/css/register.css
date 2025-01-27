@@ -1,0 +1,263 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(../images/viagem.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.navbar{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.logo{
+    margin-left: 10px;
+    width: 100px;
+    cursor: pointer;
+}
+
+.logo img {
+    max-width: 10%;
+    height: auto;
+}
+
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+.navbar ul li::after{
+    content: '';
+    height:3px;
+    width:0%;
+    background:#8bc0c9;
+    position:absolute;
+    left:0;
+    bottom:-10px;
+    transition:0.5s;
+}
+.navbar ul li:hover::after{
+    width:100%;
+}
+.content{
+    position:absolute;
+    width:100%;
+    top:50%;
+    transform: translateY(-50%);
+    text-align:center;
+    color:#fff;
+}
+.content h1{
+    font-size:70px;
+    margin-top:80px;
+}
+.content p{
+    margin:20px auto;
+    font-weight:100;
+    line-height:25px;
+}
+
+.content a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.content a:hover{
+    color: #8bc0c9; 
+    text-decoration: underline;
+}
+
+button{
+    width:200px;
+    padding: 15px 0;
+    text-align:center;
+    margin:20 px 10 px;
+    border-radius:25px;
+    font-weight:bold;
+    border: 2px solid #8bc0c9;
+    background: transparent;
+    color:#fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+span{
+    background: #8bc0c9;
+    height: 100%;
+    width: 0%;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+button:hover span{
+    width: 100%;
+}
+button:hover{
+    border: none;
+}
+
+/*Registo*/
+
+.register-form {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    border-radius: 15px;
+}
+
+.register-form input {
+    width: 300px;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+}
+
+.register-form input::placeholder {
+    color: #ddd;
+}
+
+.register-form input:focus {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.content #confirmar{
+    width: 330px;
+    padding: 15px 0;
+    text-align:center;
+    margin:20 px 10 px;
+    border-radius:25px;
+    border: 2px solid #8bc0c9;
+    background: transparent;
+    color:#fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+span{
+    background: #8bc0c9;
+    height: 100%;
+    width: 0%;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.content label {
+    display: inline-block;
+    background-color: #8bc0c9; 
+    padding: 15px;
+    color: #fff;
+    border-radius: 25px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    margin-right: 15px; 
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 200px; 
+    text-align: center; 
+}
+
+.content input[type="radio"] {
+    display: none;
+}
+
+.content input[type="radio"]:checked + label {
+    background-color: #46747a;
+}
+
+.content label:hover {
+    background-color: #46747a; 
+}
+
+/*footer*/
+
+.pg-footer {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.footer {
+    background-color: #5e9fa8; 
+    color: #fff; 
+    position: relative; 
+}
+
+.footer-wave-svg {
+    display: block;
+    height: 30px;
+    position: relative;
+    top: -1px; 
+    width: 100%;
+    background-color: #5e9fa8; 
+}
+
+.footer-wave-path {
+    fill: #46747a;
+}
+
+.footer-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1230px;
+    padding: 40px 15px; 
+    text-align: center; 
+}
+
+.footer-content .contact {
+    margin-bottom: 15px;
+}
+
+.footer-content .contact a {
+    color: #ffffff; 
+    text-decoration: none; 
+}
+
+.footer-content .contact a:hover {
+    color: #46747a; 
+    text-decoration: underline; 
+}
+
+.footer-content .credits {
+    margin-bottom: 10px;
+}
+
+.footer-content .link a {
+    color: #fffff2;
+    text-decoration: underline;
+}
+
+.footer-content a:hover {
+    color: #cddddf; 
+}

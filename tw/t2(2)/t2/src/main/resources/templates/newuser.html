@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Carpooling Évora</title>
+    <link rel="stylesheet" type="text/css" href="/css/newuser.css" />
+</head>
+
+<body>
+<html>
+
+<head>
+    <title>Carpooling Évora</title>
+    <link rel="stylesheet" href="newuser.css">
+</head>
+
+<body>
+    <!-- Banner -->
+    <div class="banner">
+        <div class="navbar">
+            <a href="newuser.jsp"><img src="/images/logo.png" class="logo" alt="Logo"></a>
+            <ul>
+                <li><a href="/newuser">Início</a></li>
+                <li><a href="/entrar">Login</a></li>
+                <li><a href="/register">Registar</a></li>
+                <li><a href="#footer">Contatos</a></li>
+            </ul>
+        </div>
+        <div class="banner-content">
+            <h1>Carpooling Évora</h1>
+            <p>A tua escolha de viagens a preços baixos</p>
+        </div>
+    </div>
+
+   <!-- Lista de Viagens -->
+<div class="listaviagens">
+    <div class="listaviagens-content">
+        <h2>Veja uma viagem para agora ou peça para o local que deseja</h2>
+        <p>Registe-se e adicione as informações da viagem que deseja, entre no veículo e chegue ao destino.</p>
+        <a href="/entrar" class="btn primary" style="text-decoration: none;">Peça uma viagem</a>
+    </div>
+    <div class="listaviagens-image">
+        <img src="/images/travel-illustration.jpg" alt="Viagem">
+    </div>
+</div>
+
+<div id="pedidosLista" class="pedidos-lista">
+    <table id="rotasTable">
+        <thead>
+            <tr>
+                <th>Origem</th>
+                <th>Destino</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="rota : ${rotas}">
+                <td th:text="${rota.origem}"></td>
+                <td th:text="${rota.destino}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+    <!-- Footer -->
+    <div class="pg-footer" id="footer">
+        <footer class="footer">
+            <svg class="footer-wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
+                <path class="footer-wave-path"
+                    d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z">
+                </path>
+            </svg>
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p class="contact"><span>Contatos:</span>
+                        <a href="mailto:l51653@alunos.uevora.pt">l51653@alunos.uevora.pt</a>
+                        <a href="mailto:l51820@alunos.uevora.pt">l51820@alunos.uevora.pt</a>
+                    </p>
+                </div>
+                <div class="credits">
+                    <p>Desenvolvido por: Miguel Aleixo e Mariana Cavaco</p>
+                </div>
+                <div class="link">
+                    <a href="https://www.uevora.pt/">Universidade de Évora</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

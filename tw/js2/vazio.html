@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Document</title>
+</head>
+<body>
+    <div id="container">
+        <p>Welcome to the Billion Dollar Page!</p>
+        <p id="status"></p>
+        <button id="btn">Check</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        let messages = 0; 
+
+        $("#btn").on('click', function(){
+           
+            $('#title').text('Document + ' + messages);
+
+           
+            const message = "You have " + messages + " messages.";
+            $('#status').text(message);
+
+           
+            if (messages >= 4) {
+                $('#status').css({
+                    color: 'red',
+                    fontWeight: 'bold'
+                });
+            }
+
+            
+            messages++;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+        <p>Test p1</p>
+    </div>
+</body>
+    <script>
+        var textNode = document.createTextNode("Linha2.")
+        document.getElementById("main").appendChild(textNode)
+        var p2 = document.createElement("p")
+        p2.appendChild(document.createTextNode("Linha 3 b"))
+        document.getElementById("main").appendChild(p2)
+    </script>
+</html>

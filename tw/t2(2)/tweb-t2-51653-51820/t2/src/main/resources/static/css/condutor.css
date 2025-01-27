@@ -1,0 +1,430 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url(../images/viagem.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.logo {
+  margin-left: 10px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.logo img {
+  max-width: 10%;
+  height: auto;
+}
+
+.navbar ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  position: relative;
+}
+.navbar ul li a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+}
+.navbar ul li::after {
+  content: "";
+  height: 3px;
+  width: 0%;
+  background: #8bc0c9;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
+}
+.navbar ul li:hover::after {
+  width: 100%;
+}
+.banner-content {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: #fff;
+}
+.banner-content h1 {
+  font-size: 70px;
+  margin-top: 80px;
+}
+.banner-content p {
+  margin: 20px auto;
+  font-weight: 100;
+  line-height: 25px;
+}
+/*Registo da viagem*/
+
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+.form-container h1 {
+text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.form form {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.form form label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form form input {
+  height: 50px;
+  border: 1px solid #e2e2e2;
+  border-radius: 8px;
+  padding: 0 15px;
+  font-size: 16px;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+.form form input:focus {
+  border-color: #000;
+  outline: none;
+  background-color: #fff;
+}
+
+.form form button {
+  height: 50px;
+  background-color: #8bc0c9;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.form form button:hover {
+  background-color: #46747a;
+}
+
+.form form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form form .form-group small {
+  color: #666;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.listaviagens-image img {
+  width: 100%;
+  max-height: 426px;
+  border-radius: 12px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+/*lista de viagens pedidas por passageiros*/
+
+.listaviagenspedidas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    align-content: stretch;
+  }
+  
+  .listaviagenspedidas-content {
+    flex: 1;
+    width: 50%;
+  }
+  
+  .listaviagenspedidas-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #000000;
+    text-align: center;
+  }
+  
+  .listaviagenspedidas-content p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #666;
+  }
+  
+  .listaviagenspedidas-content .buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .listaviagenspedidas-content .btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+  }
+  
+  .listaviagenspedidas-content .btn.primary {
+    background-color: #8bc0c9;
+    color: #fff;
+  }
+  .listaviagenspedidas-content .btn.primary:hover {
+    background-color: #46747a;
+  }
+  
+  .listaviagenspedidas-image img {
+    width: 100%;
+    max-height: 450px;
+    border-radius: 12px;
+    margin-left: 0px;
+    margin-right: 20px;
+  }
+  
+/*remover pedido*/
+.eliminarregisto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 40px auto;
+  align-content: stretch;
+}
+
+.eliminarregistocontainer h2{
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 44px;
+}
+
+.eliminarregistocontainer {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  gap: 10px;
+  
+}
+
+.eliminarregistocontainer label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+.eliminarregistocontainer input {
+    height: 50px;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    padding: 0 15px;
+    font-size: 16px;
+    background-color: #f8f8f8;
+    color: #333;
+    width: 20%;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+  
+.eliminarregistocontainer input:focus {
+    border-color: #000;
+    outline: none;
+    background-color: #fff;
+  }
+  
+.eliminarregistocontainer button {
+    height: 50px;
+    background-color: #8bc0c9;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    width: 20%;
+    margin-left: 25px;
+    align-self: end;
+  }
+  
+.eliminarregistocontainer button:hover {
+    background-color: #46747a;
+  }
+
+/*Avaliação*/
+.avaliacãopassageiro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+    max-width: 1200px;
+    margin: 40px auto;
+    align-content: stretch;
+  }
+  
+  .avaliacãopassageirocontainer h2{
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 44px;
+  }
+  
+  .avaliacãopassageirocontainer {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    gap: 10px;
+    
+  }
+  
+  .avaliacãopassageirocontainer label {
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+    }
+    
+  .avaliacãopassageirocontainer input {
+      height: 50px;
+      border: 1px solid #e2e2e2;
+      border-radius: 8px;
+      padding: 0 15px;
+      font-size: 16px;
+      background-color: #f8f8f8;
+      color: #333;
+      width: 20%;
+      margin-left: 20px;
+      margin-top: 20px;
+    }
+    
+  .avaliacãopassageirocontainer input:focus {
+      border-color: #000;
+      outline: none;
+      background-color: #fff;
+    }
+    
+  .avaliacãopassageirocontainer button {
+      height: 50px;
+      background-color: #8bc0c9;
+      color: #fff;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-transform: uppercase;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      width: 20%;
+      margin-left: 25px;
+    }
+    
+  .avaliacãopassageirocontainer button:hover {
+      background-color: #46747a;
+    }
+  
+/*footer*/
+
+.pg-footer {
+  font-family: "Roboto", sans-serif;
+}
+
+.footer {
+  background-color: #5e9fa8;
+  color: #fff;
+  position: relative;
+}
+
+.footer-wave-svg {
+  display: block;
+  height: 30px;
+  position: relative;
+  top: -1px;
+  width: 100%;
+  background-color: #5e9fa8;
+}
+
+.footer-wave-path {
+  fill: #46747a;
+}
+
+.footer-content {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1230px;
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.footer-content .contact {
+  margin-bottom: 15px;
+}
+
+.footer-content .contact a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-content .contact a:hover {
+  color: #46747a;
+  text-decoration: underline;
+}
+
+.footer-content .credits {
+  margin-bottom: 10px;
+}
+
+.footer-content .link a {
+  color: #fffff2;
+  text-decoration: underline;
+}
+
+.footer-content a:hover {
+  color: #cddddf;
+}

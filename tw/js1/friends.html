@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends TW</title>
+</head>
+<body>
+    
+</body>
+    <script>
+        let friends
+        friends = ["João", "Maria","Mario", "Antonio"]
+        console.log(typeof(friends))
+        let nome ="João"
+
+        if(nome.length > 4){
+            alert("Comprimento superior a 4")
+        }else{
+            alert("Comprimento inferior a 4")
+        }
+
+        for(i = 0; i < friends.length; i++){
+            if(friends[i] === nome){
+                alert("Homonimo Encontrado")
+                break
+            }else{
+                alert("Nenhum Homonimo")
+                break
+            }
+        }
+
+        let myVariable = Math.floor((Math.random()*10)+1)
+        console.log(typeof(myVariable))
+
+        if(myVariable > 5){
+            alert("Superior a 5")
+        }else if(myVariable < 5){
+            alert("Inferior a 5")
+        }
+
+    let number = prompt("Insira um numero")
+    console.log(number)
+    
+
+    </script>
+</html>

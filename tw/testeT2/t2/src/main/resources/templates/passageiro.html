@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Area do Passageiro</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/css/passageiroregisto.css"
+    />
+  </head>
+
+  <body>
+    <html>
+      <body>
+        <!-- Banner -->
+        <div class="banner">
+          <div class="navbar">
+            <a href="passageiro.html"
+              ><img src="/images/logo.png" class="logo" alt="Logo"
+            /></a>
+            <ul>
+              <li><a href="index.html">Início</a></li>
+              <li><a href="#footer">Contatos</a></li>
+            </ul>
+          </div>
+          <div class="banner-content">
+            <h1>Area do Passageiro</h1>
+            <p>A tua escolha de viagens a preços baixos</p>
+          </div>
+        </div>
+
+        <!-- Registo de viagens -->
+        <div class="form-container">
+          <form action="/passageiro" id="sendPedido" method="POST">
+            <h1>Vá onde quiser com o Carpooling Évora </h1>
+            <label for="origem"></label>
+            <input
+              type="text"
+              id="origem"
+              name="origem"
+              placeholder="Digite a origem"
+              required
+            />
+
+            <label for="destino"></label>
+            <input
+              type="text"
+              id="destino"
+              name="destino"
+              placeholder="Digite o destino"
+              required
+            />
+
+            <label for="data"></label>
+            <input
+              type="text"
+              id="data"
+              name="data"
+              placeholder="Data"
+              required
+            />
+            <button type="submit" value="send">Enviar Pedido</button>
+          </form>
+          <div class="listaviagens-image">
+            <img src="/images/travel-illustration.jpg" alt="Viagem" />
+          </div>
+        </div>
+        <!--Lista de viagens programadas por condutores-->
+        <div class="listaviagensprogramadas">
+          <div class="listaviagens-image">
+            <img src="/images/travel-illustration.jpg" alt="Viagem" />
+          </div>
+          <div class="listaviagensprogramadas-content">
+            <h2>Veja as viagens disponíveis no momento</h2>
+            <form>
+              <div class="buttons">
+                <button type="button" class="btn primary">
+                  Ver Viagens Disponíveis
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!--Eliminar um registo-->
+        <div class="eliminarregisto">
+          <div class="eliminarregistocontainer">
+            <h2>Deseja eliminar um registo?</h2>
+            <label for="Origem"></label>
+                <input type="text" placeholder="Origem"id="Origem">
+                <label for="Destino" id="Destino"></label>
+                <input type="text" placeholder="Destino"id="Destino">
+                <label for="Data" id="Data"></label>
+                <input type="text" placeholder="Data"id="Data">
+                <button id="remove">Remover</button>
+          </div>
+        </div>
+        <!--Ver o perfil de um condutor-->
+      <div class="avaliacãocondutor">
+        <div class="avaliacãocondutorcontainer">
+          <h2>Deseja visualizar o perfil de um condutor?</h2>
+          <label for="Perfil do Condutor"></label>
+          <input type="text" placeholder="Username do Condutor" id="UsernameCondutor">
+          <button id="btnAvaliacãoCondutor">Procurar</button>
+      </div>
+      </div>
+        <!-- Footer -->
+        <div class="pg-footer" id="footer">
+          <footer class="footer">
+            <svg
+              class="footer-wave-svg"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1200 100"
+              preserveAspectRatio="none"
+            >
+              <path
+                class="footer-wave-path"
+                d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"
+              ></path>
+            </svg>
+            <div class="footer-content">
+              <div class="footer-info">
+                <p class="contact">
+                  <span>Contatos:</span>
+                  <a href="mailto:l51653@alunos.uevora.pt"
+                    >l51653@alunos.uevora.pt</a
+                  >
+                  <a href="mailto:l51820@alunos.uevora.pt"
+                    >l51820@alunos.uevora.pt</a
+                  >
+                </p>
+              </div>
+              <div class="credits">
+                <p>Desenvolvido por: Miguel Aleixo e Mariana Cavaco</p>
+              </div>
+              <div class="link">
+                <a href="https://www.uevora.pt/">Universidade de Évora</a>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </body>
+    </html>
+  </body>
+</html>
