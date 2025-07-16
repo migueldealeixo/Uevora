@@ -1,0 +1,7 @@
+alice:senha123
+bob:senha456
+miguel:1234
+
+jose:pass
+josualdo:12345
+tiago:12345

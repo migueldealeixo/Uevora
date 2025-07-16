@@ -1,0 +1,455 @@
+
+Aula Pratica 2:
+
+1:
+    a:
+This line is from parent, value = 2
+This line is from parent, value = 3
+This line is from parent, value = 4
+This line is from parent, value = 5
+This line is from parent, value = 6
+This line is from parent, value = 7
+This line is from parent, value = 8
+This line is from parent, value = 9
+This line is from parent, value = 10
+This line is from parent, value = 11
+This line is from parent, value = 12
+This line is from parent, value = 13
+This line is from parent, value = 14
+This line is from parent, value = 15
+This line is from parent, value = 16
+This line is from parent, value = 17
+This line is from parent, value = 18
+This line is from parent, value = 19
+This line is from parent, value = 20
+This line is from parent, value = 21
+This line is from parent, value = 22
+ This line is from child, value = 1
+This line is from parent, value = 23
+ This line is from child, value = 2
+This line is from parent, value = 24
+ This line is from child, value = 3
+This line is from parent, value = 25
+ This line is from child, value = 4
+This line is from parent, value = 26
+ This line is from child, value = 5
+This line is from parent, value = 27
+ This line is from child, value = 6
+This line is from parent, value = 28
+ This line is from child, value = 7
+This line is from parent, value = 29
+ This line is from child, value = 8
+This line is from parent, value = 30
+ This line is from child, value = 9
+This line is from parent, value = 31
+ This line is from child, value = 10
+This line is from parent, value = 32
+ This line is from child, value = 11
+This line is from parent, value = 33
+ This line is from child, value = 12
+This line is from parent, value = 34
+ This line is from child, value = 13
+This line is from parent, value = 35
+ This line is from child, value = 14
+This line is from parent, value = 36
+ This line is from child, value = 15
+This line is from parent, value = 37
+ This line is from child, value = 16
+This line is from parent, value = 38
+ This line is from child, value = 17
+This line is from parent, value = 39
+ This line is from child, value = 18
+This line is from parent, value = 40
+ This line is from child, value = 19
+This line is from parent, value = 41
+ This line is from child, value = 20
+This line is from parent, value = 42
+ This line is from child, value = 21
+This line is from parent, value = 43
+ This line is from child, value = 22
+This line is from parent, value = 44
+ This line is from child, value = 23
+This line is from parent, value = 45
+ This line is from child, value = 24
+This line is from parent, value = 46
+ This line is from child, value = 25
+This line is from parent, value = 47
+ This line is from child, value = 26
+This line is from parent, value = 48
+ This line is from child, value = 27
+This line is from parent, value = 49
+ This line is from child, value = 28
+This line is from parent, value = 50
+ This line is from child, value = 29
+This line is from parent, value = 51
+ This line is from child, value = 30
+This line is from parent, value = 52
+ This line is from child, value = 31
+This line is from parent, value = 53
+ This line is from child, value = 32
+This line is from parent, value = 54
+ This line is from child, value = 33
+This line is from parent, value = 55
+ This line is from child, value = 34
+This line is from parent, value = 56
+ This line is from child, value = 35
+This line is from parent, value = 57
+ This line is from child, value = 36
+This line is from parent, value = 58
+ This line is from child, value = 37
+This line is from parent, value = 59
+ This line is from child, value = 38
+This line is from parent, value = 60
+ This line is from child, value = 39
+This line is from parent, value = 61
+ This line is from child, value = 40
+This line is from parent, value = 62
+ This line is from child, value = 41
+This line is from parent, value = 63
+ This line is from child, value = 42
+This line is from parent, value = 64
+ This line is from child, value = 43
+This line is from parent, value = 65
+ This line is from child, value = 44
+This line is from parent, value = 66
+ This line is from child, value = 45
+This line is from parent, value = 67
+ This line is from child, value = 46
+This line is from parent, value = 68
+ This line is from child, value = 47
+This line is from parent, value = 69
+ This line is from child, value = 48
+This line is from parent, value = 70
+ This line is from child, value = 49
+This line is from parent, value = 71
+ This line is from child, value = 50
+This line is from parent, value = 72
+ This line is from child, value = 51
+This line is from parent, value = 73
+ This line is from child, value = 52
+This line is from parent, value = 74
+ This line is from child, value = 53
+This line is from parent, value = 75
+ This line is from child, value = 54
+This line is from parent, value = 76
+ This line is from child, value = 55
+This line is from parent, value = 77
+ This line is from child, value = 56
+This line is from parent, value = 78
+ This line is from child, value = 57
+This line is from parent, value = 79
+ This line is from child, value = 58
+This line is from parent, value = 80
+ This line is from child, value = 59
+This line is from parent, value = 81
+ This line is from child, value = 60
+This line is from parent, value = 82
+ This line is from child, value = 61
+This line is from parent, value = 83
+ This line is from child, value = 62
+This line is from parent, value = 84
+ This line is from child, value = 63
+This line is from parent, value = 85
+ This line is from child, value = 64
+This line is from parent, value = 86
+ This line is from child, value = 65
+This line is from parent, value = 87
+ This line is from child, value = 66
+This line is from parent, value = 88
+ This line is from child, value = 67
+This line is from parent, value = 89
+ This line is from child, value = 68
+This line is from parent, value = 90
+ This line is from child, value = 69
+This line is from parent, value = 91
+ This line is from child, value = 70
+This line is from parent, value = 92
+ This line is from child, value = 71
+This line is from parent, value = 93
+ This line is from child, value = 72
+This line is from parent, value = 94
+ This line is from child, value = 73
+This line is from parent, value = 95
+ This line is from child, value = 74
+This line is from parent, value = 96
+ This line is from child, value = 75
+This line is from parent, value = 97
+ This line is from child, value = 76
+This line is from parent, value = 98
+ This line is from child, value = 77
+This line is from parent, value = 99
+ This line is from child, value = 78
+This line is from parent, value = 100
+ This line is from child, value = 79
+This line is from parent, value = 101
+ This line is from child, value = 80
+This line is from parent, value = 102
+ This line is from child, value = 81
+This line is from parent, value = 103
+ This line is from child, value = 82
+This line is from parent, value = 104
+ This line is from child, value = 83
+This line is from parent, value = 105
+ This line is from child, value = 84
+This line is from parent, value = 106
+ This line is from child, value = 85
+This line is from parent, value = 107
+ This line is from child, value = 86
+This line is from parent, value = 108
+ This line is from child, value = 87
+This line is from parent, value = 109
+ This line is from child, value = 88
+This line is from parent, value = 110
+ This line is from child, value = 89
+This line is from parent, value = 111
+ This line is from child, value = 90
+This line is from parent, value = 112
+ This line is from child, value = 91
+This line is from parent, value = 113
+ This line is from child, value = 92
+This line is from parent, value = 114
+ This line is from child, value = 93
+This line is from parent, value = 115
+ This line is from child, value = 94
+This line is from parent, value = 116
+ This line is from child, value = 95
+This line is from parent, value = 117
+ This line is from child, value = 96
+This line is from parent, value = 118
+ This line is from child, value = 97
+This line is from parent, value = 119
+ This line is from child, value = 98
+This line is from parent, value = 120
+ This line is from child, value = 99
+This line is from parent, value = 121
+ This line is from child, value = 100
+This line is from parent, value = 122
+ This line is from child, value = 101
+This line is from parent, value = 123
+ This line is from child, value = 102
+This line is from parent, value = 124
+ This line is from child, value = 103
+This line is from parent, value = 125
+ This line is from child, value = 104
+This line is from parent, value = 126
+ This line is from child, value = 105
+This line is from parent, value = 127
+ This line is from child, value = 106
+This line is from parent, value = 128
+ This line is from child, value = 107
+This line is from parent, value = 129
+ This line is from child, value = 108
+This line is from parent, value = 130
+ This line is from child, value = 109
+This line is from parent, value = 131
+ This line is from child, value = 110
+This line is from parent, value = 132
+ This line is from child, value = 111
+This line is from parent, value = 133
+ This line is from child, value = 112
+This line is from parent, value = 134
+ This line is from child, value = 113
+This line is from parent, value = 135
+ This line is from child, value = 114
+This line is from parent, value = 136
+ This line is from child, value = 115
+This line is from parent, value = 137
+ This line is from child, value = 116
+This line is from parent, value = 138
+ This line is from child, value = 117
+This line is from parent, value = 139
+ This line is from child, value = 118
+This line is from parent, value = 140
+ This line is from child, value = 119
+This line is from parent, value = 141
+ This line is from child, value = 120
+This line is from parent, value = 142
+ This line is from child, value = 121
+This line is from parent, value = 143
+ This line is from child, value = 122
+This line is from parent, value = 144
+ This line is from child, value = 123
+This line is from parent, value = 145
+ This line is from child, value = 124
+This line is from parent, value = 146
+ This line is from child, value = 125
+This line is from parent, value = 147
+ This line is from child, value = 126
+This line is from parent, value = 148
+ This line is from child, value = 127
+This line is from parent, value = 149
+ This line is from child, value = 128
+This line is from parent, value = 150
+ This line is from child, value = 129
+This line is from parent, value = 151
+ This line is from child, value = 130
+This line is from parent, value = 152
+ This line is from child, value = 131
+This line is from parent, value = 153
+ This line is from child, value = 132
+This line is from parent, value = 154
+ This line is from child, value = 133
+This line is from parent, value = 155
+ This line is from child, value = 134
+This line is from parent, value = 156
+ This line is from child, value = 135
+This line is from parent, value = 157
+ This line is from child, value = 136
+This line is from parent, value = 158
+ This line is from child, value = 137
+This line is from parent, value = 159
+ This line is from child, value = 138
+This line is from parent, value = 160
+ This line is from child, value = 139
+This line is from parent, value = 161
+ This line is from child, value = 140
+This line is from parent, value = 162
+ This line is from child, value = 141
+This line is from parent, value = 163
+ This line is from child, value = 142
+This line is from parent, value = 164
+ This line is from child, value = 143
+This line is from parent, value = 165
+ This line is from child, value = 144
+This line is from parent, value = 166
+ This line is from child, value = 145
+This line is from parent, value = 167
+ This line is from child, value = 146
+This line is from parent, value = 168
+ This line is from child, value = 147
+This line is from parent, value = 169
+ This line is from child, value = 148
+This line is from parent, value = 170
+ This line is from child, value = 149
+This line is from parent, value = 171
+ This line is from child, value = 150
+This line is from parent, value = 172
+ This line is from child, value = 151
+This line is from parent, value = 173
+ This line is from child, value = 152
+This line is from parent, value = 174
+ This line is from child, value = 153
+This line is from parent, value = 175
+ This line is from child, value = 154
+This line is from parent, value = 176
+ This line is from child, value = 155
+This line is from parent, value = 177
+ This line is from child, value = 156
+This line is from parent, value = 178
+ This line is from child, value = 157
+This line is from parent, value = 179
+ This line is from child, value = 158
+This line is from parent, value = 180
+ This line is from child, value = 159
+This line is from parent, value = 181
+ This line is from child, value = 160
+This line is from parent, value = 182
+ This line is from child, value = 161
+This line is from parent, value = 183
+ This line is from child, value = 162
+This line is from parent, value = 184
+ This line is from child, value = 163
+This line is from parent, value = 185
+ This line is from child, value = 164
+This line is from parent, value = 186
+ This line is from child, value = 165
+This line is from parent, value = 187
+ This line is from child, value = 166
+This line is from parent, value = 188
+ This line is from child, value = 167
+This line is from parent, value = 189
+ This line is from child, value = 168
+This line is from parent, value = 190
+ This line is from child, value = 169
+This line is from parent, value = 191
+ This line is from child, value = 170
+This line is from parent, value = 192
+ This line is from child, value = 171
+This line is from parent, value = 193
+ This line is from child, value = 172
+This line is from parent, value = 194
+ This line is from child, value = 173
+This line is from parent, value = 195
+ This line is from child, value = 174
+This line is from parent, value = 196
+ This line is from child, value = 175
+This line is from parent, value = 197
+ This line is from child, value = 176
+This line is from parent, value = 198
+ This line is from child, value = 177
+This line is from parent, value = 199
+ This line is from child, value = 178
+This line is from parent, value = 200
+ This line is from child, value = 179
+ This line is from child, value = 180
+*** Parent is done ***
+ This line is from child, value = 181
+ This line is from child, value = 182
+ This line is from child, value = 183
+ This line is from child, value = 184
+ This line is from child, value = 185
+ This line is from child, value = 186
+ This line is from child, value = 187
+ This line is from child, value = 188
+ This line is from child, value = 189
+ This line is from child, value = 190
+ This line is from child, value = 191
+ This line is from child, value = 192
+ This line is from child, value = 193
+ This line is from child, value = 194
+ This line is from child, value = 195
+ This line is from child, value = 196
+ This line is from child, value = 197
+ This line is from child, value = 198
+ This line is from child, value = 199
+ This line is from child, value = 200
+ *** Child process is done ***
+
+ A ordenação dos outputs não é sempre a mesma apesar de um inicio sequencial, com o decorrer da execução do codigo a ordem é intercaladam até ao fim da execução do processo Pai.
+ A razão pela qual isto acontece é que ocorre um escalonamento dos processos pelo sistema operativo.
+
+
+    b:
+O pid guarda o id de processo. Nos processos pai guarda o pid dos processos filhos enquanto os processos filhos guardam um pid = 0 pois são resultado de um fork().
+
+    c:
+A função fork() é executada em kernel mode.
+
+2:
+    a:
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/types.h>
+void main(void)
+{
+pid_t pid, pid2;
+pid = fork();
+if (pid > 0) {
+pid2 = fork();
+puts("Hello 1 \n");
+}
+puts("Hello 2 \n");
+}
+
+Espera se serem imprimidos 2 hello 1 e 3 hello 2.
+
+    b:
+
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/types.h>
+void main(void)
+{
+pid_t pid, pid2, pid3;
+pid = fork();
+pid2 = fork();
+if(pid2) printf("Pai - Hello 2 \n"); else printf("Filho - Hello 2 \n");
+pid3 = fork();
+if(pid3) printf("Pai - Hello 3 \n"); else printf("Filho - Hello 3 \n");
+} 
+
+pai hello2 -> 2
+pai hello3 -> 4
+filho hello2-> 4
+filho hello3 -> 4
+
